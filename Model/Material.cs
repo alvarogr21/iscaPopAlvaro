@@ -49,7 +49,7 @@ namespace iscaPopAlvaro.Model
 
         [ForeignKey(typeof(Organisme))]
         public int organismeId { get; set; }
-        [ManyToOne]
+        [ManyToOne(CascadeOperations = CascadeOperation.CascadeRead | CascadeOperation.CascadeDelete)]
         public Organisme organisme { get; set; }
     }
 }
