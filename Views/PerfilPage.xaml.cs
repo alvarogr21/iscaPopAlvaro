@@ -30,9 +30,9 @@ public partial class PerfilPage : Base.BasePage
         string nom = txtNomPerfil.Text;
         string email = txtEmailPerfil.Text;
         string contraseña = txtPasswordPerfil.Text;
-        Organisme.Nom = nom;
-        Organisme.Email = email;
-        Organisme.Password = contraseña;
+        Organisme.nom = nom;
+        Organisme.email = email;
+        Organisme.password = contraseña;
         vm.modificarOrganisme();
     }
 

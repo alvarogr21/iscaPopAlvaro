@@ -10,43 +10,44 @@ namespace iscaPopAlvaro.Model
 
         private int _id;
         [PrimaryKey, AutoIncrement]
-        public int ID { get { return _id; } set { SetProperty(ref _id, value); } }
+        public int id { get { return _id; } set { SetProperty(ref _id, value); } }
 
-        private string _Codi;
-        public string Codi { get { return _Codi; } set { SetProperty(ref _Codi, value); } }
+        private string _codi;
+        public string codi { get { return _codi; } set { SetProperty(ref _codi, value); } }
 
         private string _password;
-        public string Password { get { return _password; } set { SetProperty(ref _password, value); } }
+        public string password { get { return _password; } set { SetProperty(ref _password, value); } }
 
-        private string _Nom;
-        public string Nom { get { return _Nom; } set { SetProperty(ref _Nom, value); } }
+        private string _nom;
+        public string nom { get { return _nom; } set { SetProperty(ref _nom, value); } }
 
-        private string _Email;
-        public string Email { get { return _Email; } set { SetProperty(ref _Email, value); } }
+        private string _email;
+        [Unique]
+        public string email { get { return _email; } set { SetProperty(ref _email, value); } }
 
         private DateTime _momento;
-        public DateTime Momento { get { return _momento; } set { SetProperty(ref _momento, value); } }
+        public DateTime momento { get { return _momento; } set { SetProperty(ref _momento, value); } }
 
-        private List<Material> _Materials;
+        private List<Material> _materials;
         [OneToMany(CascadeOperations = CascadeOperation.CascadeInsert | CascadeOperation.CascadeRead)]
-        public List<Material> Materials
+        public List<Material> materials
         {
-            get { return _Materials; }
+            get { return _materials; }
             set
             {
-                SetProperty(ref _Materials, value);
-                MaterialsCollection = new ObservableCollection<Material>(value);
+                SetProperty(ref _materials, value);
+                materialsCollection = new ObservableCollection<Material>(value);
             }
         }
 
-        private ObservableCollection<Material> _MaterialsCollection;
+        private ObservableCollection<Material> _materialsCollection;
 
 
         [Ignore]
-        public ObservableCollection<Material> MaterialsCollection
+        public ObservableCollection<Material> materialsCollection
         {
-            get { return _MaterialsCollection; }
-            set { SetProperty(ref _MaterialsCollection, value); }
+            get { return _materialsCollection; }
+            set { SetProperty(ref _materialsCollection, value); }
         }
     }
 }

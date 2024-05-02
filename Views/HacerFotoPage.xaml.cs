@@ -55,11 +55,11 @@ public partial class HacerFotoPage : Base.BasePage
                 MemoryStream memoryStream = new MemoryStream();
                 await sourceStream.CopyToAsync(memoryStream);
                 foto.foto = memoryStream.ToArray();
-                foto.Nom = "Foto";
-                foto.Path = localFilePath;
-                foto.Material = Material;
+                foto.nom = "Foto";
+                foto.path = localFilePath;
+                foto.material = Material;
                 Foto = foto;
-                Material.Fotos.Add(Foto);
+                Material.fotos.Add(Foto);
                 vm.insertarFoto(Foto);
             }
         }

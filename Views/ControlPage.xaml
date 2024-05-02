@@ -42,7 +42,7 @@
                         TextColor="White"
                         CornerRadius="10"
                         Margin="0,0,0,20"/>
-                <Label Text="{Binding Organisme.Nom}"/>
+                <Label Text="{Binding Organisme.nom}"/>
             </StackLayout>
         </ScrollView>
 

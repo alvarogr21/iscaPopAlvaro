@@ -35,15 +35,8 @@ namespace iscaPopAlvaro.Dao
 
         public Organisme buscarCuenta(string email, string contraseña)
         {
-            var organisme = BaseDatos.GetConnection().GetAllWithChildrenAsync<Organisme>(o => o.Email.Equals(email)).Result;
-            Organisme org = organisme.FirstOrDefault();
-            if (org.Password.Equals(contraseña)){
-                return org;
-            }
-            else
-            {
-                return null;
-            }
+            Organisme org = BaseDatos.GetConnection().GetAllWithChildrenAsync<Organisme>(o => o.email.Equals(email) && o.password.Equals(contraseña)).Result.FirstOrDefault();
+            return org;
         }
     }
 }

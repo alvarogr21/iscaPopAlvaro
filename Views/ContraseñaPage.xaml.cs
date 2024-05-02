@@ -23,8 +23,8 @@ public partial class ContraseñaPage : Base.BasePage
 
     private async void DefinirContraseñaClick(object sender, EventArgs e)
     {
-        Organisme.Password = txtPassword.Text;
-        Organisme.Momento = DateTime.Now;
+        Organisme.password = txtPassword.Text;
+        Organisme.momento = DateTime.Now;
         vm.insertarOrganisme();
 
         await Shell.Current.GoToAsync($"{nameof(IniciarSesionPage)}");

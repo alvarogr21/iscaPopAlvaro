@@ -48,14 +48,14 @@ public partial class MaterialPage : Base.BasePage
         string descripcio = txtDescripcio.Text;
         EnumEstadoMaterial estat = (EnumEstadoMaterial)Enum.Parse(typeof(EnumEstadoMaterial), (string)pickerEstat.SelectedItem);
         Material mat = new Material();
-        mat.Nom = nom;
-        mat.Uso = uso;
-        mat.Descripcio = descripcio;
-        mat.Estat = estat;
-        mat.Organisme = Organisme;
+        mat.nom = nom;
+        mat.uso = uso;
+        mat.descripcio = descripcio;
+        mat.estat = estat;
+        mat.organisme = Organisme;
         Material = mat;
         vm.insertMaterial(Material);
-        Organisme.MaterialsCollection.Add(mat);
+        Organisme.materialsCollection.Add(mat);
         vm.assignDadesOrganisme(Organisme);
     }
 }

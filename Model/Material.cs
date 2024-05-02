@@ -15,41 +15,41 @@ namespace iscaPopAlvaro.Model
         [PrimaryKey, AutoIncrement]
         public int id { get { return _id; } set { SetProperty(ref _id, value); } }
         
-        private string _Nom;
-        public string Nom { get { return _Nom; } set { SetProperty(ref _Nom, value);  } }
+        private string _nom;
+        public string nom { get { return _nom; } set { SetProperty(ref _nom, value);  } }
 
         private string _uso;
-        public string Uso { get { return _uso; } set { SetProperty(ref _uso, value); } }
+        public string uso { get { return _uso; } set { SetProperty(ref _uso, value); } }
 
         private EnumEstadoMaterial _estat;
-        public EnumEstadoMaterial Estat { get { return _estat; } set { SetProperty(ref _estat, value); } }
+        public EnumEstadoMaterial estat { get { return _estat; } set { SetProperty(ref _estat, value); } }
 
-        private string _Descripcio;
-        public string Descripcio { get { return _Descripcio; } set { SetProperty(ref _Descripcio, value); } }
+        private string _descripcio;
+        public string descripcio { get { return _descripcio; } set { SetProperty(ref _descripcio, value); } }
 
-        private List<Foto> _Fotos;
+        private List<Foto> _fotos;
         [OneToMany(CascadeOperations = CascadeOperation.CascadeInsert | CascadeOperation.CascadeRead)]
-        public List<Foto> Fotos
+        public List<Foto> fotos
         {
-            get { return _Fotos; }
+            get { return _fotos; }
             set
             {
-                SetProperty(ref _Fotos, value);
-                MaterialsCollection = new ObservableCollection<Foto>(value);
+                SetProperty(ref _fotos, value);
+                fotosCollection = new ObservableCollection<Foto>(value);
             }
         }
 
-        private ObservableCollection<Foto> _FotosCollection;
+        private ObservableCollection<Foto> _fotosCollection;
         [Ignore]
-        public ObservableCollection<Foto> MaterialsCollection
+        public ObservableCollection<Foto> fotosCollection
         {
-            get { return _FotosCollection; }
-            set { SetProperty(ref _FotosCollection, value); }
+            get { return _fotosCollection; }
+            set { SetProperty(ref _fotosCollection, value); }
         }
 
         [ForeignKey(typeof(Organisme))]
-        public int OrganismeId { get; set; }
+        public int organismeId { get; set; }
         [ManyToOne(CascadeOperations = CascadeOperation.CascadeInsert | CascadeOperation.CascadeRead)]
-        public Organisme Organisme { get; set; }
+        public Organisme organisme { get; set; }
     }
 }

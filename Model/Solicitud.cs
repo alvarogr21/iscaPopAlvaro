@@ -11,17 +11,17 @@ namespace iscaPopAlvaro.Model
         public int id { get { return _id; } set { SetProperty(ref _id, value); } }
 
         private DateTime _momento;
-        public DateTime Momento { get { return _momento; } set { SetProperty(ref _momento, value); } }
+        public DateTime momento { get { return _momento; } set { SetProperty(ref _momento, value); } }
 
         [ForeignKey(typeof(Organisme))]
-        public int OrganismeId { get; set; }
+        public int organismeId { get; set; }
         [ManyToOne(CascadeOperations = CascadeOperation.CascadeInsert | CascadeOperation.CascadeRead)]
-        public Organisme Organisme { get; set; }
+        public Organisme organisme { get; set; }
 
         [ForeignKey(typeof(Material))]
-        public int MaterialId { get; set; }
+        public int materialId { get; set; }
         [ManyToOne(CascadeOperations = CascadeOperation.CascadeInsert | CascadeOperation.CascadeRead)]
-        public Material Material { get; set; }
+        public Material material { get; set; }
 
         public Solicitud()
         {

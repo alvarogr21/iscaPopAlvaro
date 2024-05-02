@@ -73,9 +73,9 @@ public partial class LoginPage : Base.BasePage
         string cod = codi;
             string nom = "nombrePrueba";
             Organisme org = new Organisme();
-            org.Nom = nom;
-            org.Codi = cod;
-            org.Email = correo;
+            org.nom = nom;
+            org.codi = cod;
+            org.email = correo;
             if (txtCodi.Text == codi)
             {
                 await Shell.Current.GoToAsync($"{nameof(ContraseñaPage)}",
